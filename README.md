@@ -62,14 +62,23 @@ dumb-coding/
 
 ### 安装
 
-1. **手动放入宿主技能目录**
-   将整个 `dumb-coding/` 目录复制或软链接到你所用 Agent 的技能目录中，例如：
-   - 项目级：`<your-project>/.agents/skills/dumb-coding/`
-   - 全局级：`~/.agents/skills/dumb-coding/` 或 `~/.claude/skills/dumb-coding/`
+1. **让 AI 自动配置（推荐）**
+   直接把下面这段英文提示词发给你的 AI 编程助手即可完成安装与校验：
+   ```text
+   Install and configure the `dumb-coding` Agent Skill from https://github.com/JiaMingWang-CN/dumb-coding for my coding agent environment.
+
+   1. Check which skills directory this agent/IDE uses (e.g., `.agents/skills/dumb-coding/`, `~/.agents/skills/dumb-coding/`, or `~/.claude/skills/dumb-coding/`). If scope isn't clear, ask me whether to install it for the current project or globally.
+   2. Install it via `npx skills add JiaMingWang-CN/dumb-coding`, or if that isn't available, clone/copy the repository's `SKILL.md` and `references/` directory into the target `dumb-coding/` skills folder.
+   3. Verify that `SKILL.md` (`name: dumb-coding`) and all four files under `references/` (`ask.md`, `spec-and-builder-check.md`, `ask-plan.md`, `plan-template.md`) are in place and discoverable, then confirm the installed path and how to invoke it.
+   ```
 2. **通过 Skills CLI 安装**
    ```bash
    npx skills add JiaMingWang-CN/dumb-coding
    ```
+3. **手动放入宿主技能目录**
+   将整个 `dumb-coding/` 目录复制或软链接到你所用 Agent 的技能目录中，例如：
+   - 项目级：`<your-project>/.agents/skills/dumb-coding/`
+   - 全局级：`~/.agents/skills/dumb-coding/` 或 `~/.claude/skills/dumb-coding/`
 
 ### 使用方式
 
